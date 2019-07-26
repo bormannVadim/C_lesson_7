@@ -19,7 +19,7 @@
  //
  //int widthTravers(GraphNode *start, GraphNode * stop) {
  //	pushQueue(q, start);   
- //	start->used = 1; 
+ //	start->used = 1; //dsf
  //	while (q->size != 0) { 
  //		GraphNode current = popQueue(q); /
  //		if (current->data == stop->data)
