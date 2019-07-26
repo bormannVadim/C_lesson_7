@@ -3,39 +3,51 @@
 
 #include "pch.h"
 /*
-  Savenko V 
-  Lesson 7 
+  Savenko V
+  Lesson 7
   Run Lee
  */
 #include <stdio.h>
 #include <stdlib.h>
-//
-//typedef struct GraphNode {
-//	int data;
-//	int index;
-//	int used;
-//	struct List* children;
-//} GraphNode;
-//
-//int widthTravers(GraphNode *start, GraphNode * stop) {
-//	pushQueue(q, start);
-//	start->used = 1;
-//	while (q->size != 0) {
-//		GraphNode current = popQueue(q);
-//		if (current->data == stop->data)
-//			return 1;
-//
-//		while (current->children.size != 0) {
-//			int i;
-//			for (i = 0; i < children.size; i++) {
-//				if (children.get(i).used != 1) {
-//					pushQueue(q, children.get(i));
-//					children.get(i).used = 1;
-//				}
-//			}
-//		}
-//	}
-//}
+ //
+ typedef struct GraphNode {
+ 	int data;
+ 	int index;
+ 	int used;
+ 	struct List* children;
+ } GraphNode;
+ //
+ //int widthTravers(GraphNode *start, GraphNode * stop) {
+ //	pushQueue(q, start);   
+ //	start->used = 1; 
+ //	while (q->size != 0) { 
+ //		GraphNode current = popQueue(q); /
+ //		if (current->data == stop->data)
+ //			return 1;
+ //		while (current->children.size != 0) {  
+ //			int i;
+ //			for (i = 0; i < children.size; i++) {
+ //				if (children.get(i).used != 1) {
+ //					pushQueue(q, children.get(i));
+ //					children.get(i).used = 1;
+ //				}
+ //			}
+ //		}
+ //	}
+ //}
+int widthTravers(GraphNode *start, GraphNode * stop) 
+{
+	if (start->data == stop->data) // if start equal  stop then return true
+	{
+		return 1;
+	}
+    for(int i=0; i < start->children.size;i++)
+	{
+			 widthTravers(start->children.get(i), stop);
+		   
+    }
+}
+
 
 const int w = 11;
 const int h = 12;
